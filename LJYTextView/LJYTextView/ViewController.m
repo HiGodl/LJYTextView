@@ -17,7 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    LJYTextView *textView = [[LJYTextView alloc] initWithFrame:CGRectMake(10, 10, 200, 200)];
+    LJYTextView *textView = [[LJYTextView alloc] initWithFrame:CGRectMake(10, 20, 200, 200)];
+    textView.maxLength = 10;
     textView.placeHolder = @"aaaaa";
     [self.view addSubview:textView];
 }

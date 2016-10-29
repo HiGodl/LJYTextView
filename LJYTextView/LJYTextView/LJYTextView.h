@@ -10,6 +10,8 @@
 
 IB_DESIGNABLE @interface LJYTextView : UITextView
 
-@property(nonatomic, copy)IBInspectable NSString *placeHolder;
+@property (nonatomic, copy) IBInspectable NSString *placeHolder;
+@property (nonatomic, assign) NSInteger maxLength;
+
 
 @end
