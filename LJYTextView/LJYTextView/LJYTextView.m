@@ -22,6 +22,10 @@
     self = [super initWithFrame:frame textContainer:textContainer];
     if (self) {
         self.maxLength = 0;
+        self.borderColor = [UIColor grayColor];
+        self.borderWidth = 1;
+        self.cornerRadius = 5;
+
         [self setupUI];
     }
     return self;
@@ -31,6 +35,10 @@
     self = [super initWithCoder:aDecoder];
     if (self) {
         self.maxLength = 0;
+        self.borderColor = [UIColor grayColor];
+        self.borderWidth = 1;
+        self.cornerRadius = 5;
+        
         [self setupUI];
     }
     return self;
@@ -54,8 +62,9 @@
 
 -(void)setupUI{
     [self addSubview:self.placeholderLabel];
-    self.layer.borderColor = [UIColor grayColor].CGColor;
-    self.layer.borderWidth = 1;
+    self.layer.borderColor = self.borderColor.CGColor;
+    self.layer.borderWidth = self.borderWidth;
+    self.layer.cornerRadius = self.cornerRadius;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textDidChange:) name:UITextViewTextDidChangeNotification object:self];
 }
 
